@@ -1,7 +1,7 @@
 {
-"name": "business-listng",
+"name": "Dail4Service",
 "version": "1.0.0",
-"main': "server.js",
+"main": "server.js",
 "scripts": {
 "start": "node server.js"
 },
