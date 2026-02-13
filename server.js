@@ -1,18 +1,16 @@
 const express = require("express");
-const fs = require("fs");
+const app = express();
 const path = require("path");
 
-const app = express();
-
-//Middleware
-app.use(express.urlencoded[extended: true}));
 app.use(express.static("public"));
 
-const DATA_FILE = path.join(_dirname, "data", "businesses.json");
-
-// Home
 app.get("/", (req, res) => {
-res.sendFile(_dirname + "/public/index.html");
+res.sendFile(path.join(_dirname, "public", "index.html"));
+});
+
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => {
+console.log("Server running on port " + PORT);
 });
 
 // Add business (POST)
@@ -42,9 +40,4 @@ const data = JSON.parse(fs..readFileSync(DATA_FILE));
 
 const filtered = data.filter(b => b.category === category);
 res.json(filtered);
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-console.log("Server running on port " + PORT);
 });
