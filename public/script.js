@@ -26,3 +26,28 @@ alert("Please enter a category");
 window.location.href = "category.html?category=" + value;
 }
 }
+
+function searchService() {
+const location = document.getElementById("userLocation").value;
+
+if (location === "") {
+alert("Please select location");
+return;
+}
+
+window.location.href = "category.html?location=" + location;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+const locationSelect = document.getElementById("userLocation");
+
+if (locationSelect) {
+locationSelect.addEventListener("change", function () {
+const location = this.value;
+
+if (location !== "") {
+window.location.href = "category.html?location=" + location;
+}
+});
+}
+});
