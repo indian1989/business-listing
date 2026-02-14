@@ -1,219 +1,83 @@
-body {
-font-family: Arial, sans_serif;
-margin: 0;
-background: #f8f9fa;
+alert("welcome to Dail4Service.in Business Directory");
+
+function openCategory(category) {
+alert("You clicked category: ");
+window.location.href = "category.html?category=" + encodeURIComponent(category);
 }
 
-.main-header {
-display: flex;
-align-items: center;
-padding: 10px 15px;
-background: #ffffff;
-border-bottom: 1px solid #add;
-}
+functon searchCategory() {
+let searchValue = document.getElementById("searchInput").value;
 
-.header-left {
-flex: 1;
-}
-
-.header-left select {
-padding: 6px 10px;
-font-size: 14px;
-cursor: pointer;
-}
-
-.header-center {
-flex: 2;
-text-align: center;
-}
-
-.header-center h1 {
-margin: 0;
-font- size: 20px;
-}
-
-@media (max-width:600px) {
-.main-header {
-flex-direction: row;
-}
-
-.header-center h1 {
-font-size: 16px;
-}
-
-.header-left select {
-font-size: 12px;
+if (searchvalue === "") {
+alert("Please enter a category or business name");
+} else {
+alert("Searching for: " + searchValue);
+// future:
+// window.location.href = "search.html?query=" + searchValue;
 }
 }
 
-header {
-background: #0d6efd;
-colour: white;
-padding: 2px;
-text-align: center;
+functon searchCategory() {
+let value = document.getElementById("searchInput").value;
+
+if (searchvalue === "") {
+alert("Please enter a category");
+} else {
+window.location.href = "category.html?category=" + value;
+}
 }
 
-header2 {
-background: #0d6efe;
-colour: white;
-padding: 2px;
-text-align: center;
+function searchService() {
+const location = document.getElementById("userLocation").value;
+
+if (location === "") {
+alert("Please select location");
+return;
 }
 
-nav a {
-colour: white;
-margin: 0 20px;
-text-decoration: none;
-font-weight: bold;
+window.location.href = "category.html?location=" + location;
 }
 
-.hero {
-padding: 40px;
-text-align: center;
-background: white;
+document.addEventListener("DOMContentLoaded", function() {
+const locationSelect = document.getElementById("userLocation");
+
+if (locationSelect) {
+locationSelect.addEventListener("change", function () {
+const location = this.value;
+
+if (location !== "") {
+window.location.href = "category.html?location=" + location;
+}
+});
+}
+});
+
+document.addEventListener("DOMContentLoaded", loadCategories);
+
+function loadCategories(0 {
+fetch("data/categories.json")
+.then(res => res.json())
+.then(categories => {
+const container = document.getElementById("categoryContainer");
+container.innerHTML = "";
+
+categories.forEach(cat => {
+const div = document.creatElement("div");
+div.className = "category-card";
+dv.onclick = () => openCategory(cat.name);
+
+div.innerHTML = '
+<i class="fa-solid ${cat.icon}" style="color:${cat.color}"></i>
+<p>$cat.name}</p>
+';
+
+container.appendChild(div);
+});
+});
+.catch(err => console.error("Category load error:", err));
 }
 
-.hero input {
-width: 60%;
-padding: 10px;
-}
-
-footer {
-background: #257;
-colour: white;
-text-align: center;
-padding: 10px;
-}
-
-body {
-font-family: Arial, sans_serif;
-margin: 0;
-background: #f8f9fa;
-}
-
-/* Header */
-.header {
-background: #0a66c2;
-color: white;
-text-align; center;
-padding: 20px;
-}
-
-/* Search */
-.search-section {
-display: flex;
-justify-content: center;
-padding: 20px
-}
-
-.search-section input {
-width: 60%
-padding: 10px;
-font-size: 16px;
-}
-
-.search-secton button {
-padding: 10px 20px;
-background: #0a66c2;
-color: white;
-border: none;
-cursor: pointer;
-}
-
-/* CATEGORY */
-.category-section {
-padding: 20px;
-text-align: center;
-}
-
-.categories {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-gap: 15px;
-}
-
-.category-card {
-text-align: center;
-background: #fff;
-padding: 20px;
-border-radius: 12px;
-cursor: pointer;
-box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-transition: 0.3s;
-}
-
-.category-card i {
-font-size: 32px;
-color: #007bff;
-margin-bottom: 10px;
-}
-
-.category-card p {
-font-weight: 600;
-margin: 0;
-}
-
-.category-card:hover {
-background; #0a66c2;
-color: white;
-transform: translateY(-5px);
-}
-
-.business-list {
-padding: 20px;
-}
-
-.business-card {
-background: white;
-margin-bottom: 15px;
-padding: 15px;
-border-radius: 6px;
-box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.business-form {
-max-width: 400px;
-background: white;
-margin: auto;
-padding: 20px;
-border-radius: 8px;
-}
-
-.business-form input,
-.business-form select,
-.business-formbutton {
-width: 100%
-padding: 10px;
-margin-bottom: 15px;
-}
-
-.business-form button {
-background: #0a66c2
-color: white;
-border: none;
-cursor: pointer;
-}
-
-.site-name {
-font-size: 32px;
-font-weight: bold;
-margin: none;
-}
-
-.color1 {
-color: #e91e63;
-}
-
-.color2 {
-color: #2196f3;
-}
-
-.color3 {
-color: #e91e63;
-}
-
-@media (max-width: 600px) {
-.site-name {
-font-size: 20px;
-}
+function openCategory(category) {
+window.location.href =
+"category.html?category=" + encodeURIComponent(category);
 }
