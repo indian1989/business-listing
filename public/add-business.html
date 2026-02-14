@@ -4,14 +4,19 @@
 <title>Add Business</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
 <header class="header">
-<h1>Add Your Business</h1>
+<h2>Add Your Business</h2>
+
+<nav>
+<a href="index.html">Home</a>
+</nav>
 </header>
 
+<body>
+
 <section class="hero">
-<form class="business-form" acton="/add-business" method="POST">
+<form class="business-form" action="/add-business" method="POST">
 
 <input type="text" name="name" placeholder="Business Name" required><br><br>
 
@@ -20,19 +25,58 @@
 <option>Plumber</option>
 <option>Electrician</option>
 <option>Doctor</option>
-<option>Plumber</option>
-<option>Plumber</option>
-<option>Plumber</option>
-<option>Plumber</option>
-<option>Plumber</option>
-<option>Plumber</option>
-<option>Plumber</option>
+<option>Panter</option>
+<option>Hotels</option>
+<option>Restaurant</option>
+<option>Educational Institution</option>
+<option>Salon & Spa</option>
+<option>Tour & Travels</option>
+<option>Teacher</option>
 <option>Other</option>
 </select>
 
+<select id="serviceLocation">
+<option value="">-- Select State or UT --</option>
+<option value="andaman & nicobar">Andaman & Nicobar</option>
+<option value="andhra pradesh">Andhra Pradesh</option>
+<option value="arunachal pradesh">Arunachal Pradesh</option>
+<option value="assam">Assam</option>
+<option value="bihar">Bihar</option>
+<option value="chandigarh">Chandigarh</option>
+<option value="chhattisgarh">Chhattisgarh</option>
+<option value="kolkata"></option>
+<option value="kolkata">Kolkata</option>
+<option value="delhi">Delhi</option>
+
+
+<option value="chennai">Chennai</option>
+<option value="nagpur">Nagpur</option>
+<option value="kochchi">Kochchi</option>
+<option value="lucknow">Lucknow</option>
+<option value="patna">Patna</option>
+<option value="hajipur">Hajipur</option>
+<option value="muzaffarpur">Muzaffarpur</option>
+<option value="gaya">Gaya</option>
+<option value="siwan">Siwan</option>
+<option value="chhapra">Chhapra</option>
+<option value="hyderabad">Hyderabad</option>
+<option value="delhi">Delhi</option>
+<option value="delhi">Delhi</option>
+<option value="delhi">Delhi</option>
+<option value="delhi">Delhi</option>
+<option value="delhi">Delhi</option>
+<option value="delhi">Delhi</option>
+<option value="delhi">Delhi</option>
+<option value="delhi">Delhi</option>
+<option value="delhi">Delhi</option>
+<option value="delhi">Delhi</option>
+<option value="delhi">Delhi</option>
+<option value="delhi">Delhi</option>
+</select>
+
+
 <input type="text" name="city" placeholder="City" required><br><br>
 <input type="text" name="district" placeholder="District" required><br><br>
-<input type="text" name="state" placeholder="State" required><br><br>
 <input type="text" name="phone" placeholder="Phone" required><br><br>
 <textarea placeholder="Description"></textarea><br><br>
 <button type="submit">Submit</button>
@@ -42,6 +86,6 @@
 <footer>
 	<p>     &copy;2026 Dail4Services. All Rights Reserved.</p>
 </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
