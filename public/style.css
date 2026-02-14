@@ -78,13 +78,6 @@ width: 60%;
 padding: 10px;
 }
 
-.category-card {
-background: #fff;
-padding: 20px;
-border-radius: 10px;
-box-shadow; 0 0 10px rgba(0,0,0,0,1);
-}
-
 footer {
 background: #257;
 colour: white;
@@ -133,15 +126,14 @@ padding: 20px;
 text-align: center;
 }
 
-.category-grid {
+.categories {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 gap: 15px;
-margin-top: 10px;
 }
 
 .category-card {
-text-align: center
+text-align: center;
 background: #fff;
 padding: 20px;
 border-radius: 12px;
@@ -154,6 +146,11 @@ transition: 0.3s;
 font-size: 32px;
 color: #007bff;
 margin-bottom: 10px;
+}
+
+.category-card p {
+font-weight: 600;
+margin: 0;
 }
 
 .category-card:hover {
