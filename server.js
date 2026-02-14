@@ -88,8 +88,8 @@ const mongoose = require("mongoose");
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
-console.log("tick-sign MongoDB Atlas Connected ( Render)");
+console.log("✔ MongoDB Atlas Connected ( Render)");
 })
 .catch((error) => {
-console.log("cross-sign MongoDB Connection Error:", error.message):
+console.log("✘ MongoDB Connection Error:", error.message):
 });
