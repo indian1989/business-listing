@@ -93,3 +93,9 @@ console.log("✔ MongoDB Atlas Connected ( Render)");
 .catch((error) => {
 console.log("✘ MongoDB Connection Error:", error.message):
 });
+
+// Admin Auth Routes
+
+const adminAuthRoutes = require("./routes/adminAuthRoutes");
+
+app.use("/api/admin", adminAuthRoutes);
