@@ -19,7 +19,7 @@
 document.getElementById("adminLoginForm").addEventListener("submit", async function(e){
   e.preventDefault();
 
-  const res = await fetch("https://YOUR-RENDER-URL.onrender.com/api/admin/login", {
+  const res = await fetch("https://dial4service.onrender.com/api/admin/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -39,3 +39,4 @@ document.getElementById("adminLoginForm").addEventListener("submit", async funct
 
 </body>
 </html>
+
